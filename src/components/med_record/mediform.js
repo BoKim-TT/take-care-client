@@ -16,7 +16,7 @@ const MedForm = ({ addForm }) => {
   const [error, setError] = useState(null);
 
   const fileUpload = (file) => {
-    console.log('uploadFile', file);
+   
     setFile({
       fileName: file.name,
       fileURL: file.url,

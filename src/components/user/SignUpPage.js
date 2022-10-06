@@ -28,7 +28,7 @@ const SignUpPage = () => {
     bcrypt.hash(password, 10, function (err, hash) {
 
       // fetch post request into user data
-      fetch(`/data/user/signUp`, {
+      fetch(`https://take-care.herokuapp.com/data/user/signUp`, {
         method: 'POST',
         body: JSON.stringify({
           email: email,

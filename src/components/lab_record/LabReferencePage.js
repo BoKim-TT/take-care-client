@@ -22,7 +22,7 @@ const LabReferencePage = () => {
 
 // fetch a lab record by user & record Id
   useEffect(() => {
-    fetch(`/data/lab-records/${user.token}/${id}`)
+    fetch(`https://take-care.herokuapp.com/data/lab-records/${user.token}/${id}`)
     .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {
@@ -37,7 +37,7 @@ const LabReferencePage = () => {
    // fetch api lab info from medline plus by lab record (test area)
   useEffect(() => {
     if (record._id) {
-      fetch(`/api/lab-info`, {
+      fetch(`https://take-care.herokuapp.com/api/lab-info`, {
         method: 'POST',
         body: JSON.stringify({
           test: record.testArea,

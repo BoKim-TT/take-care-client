@@ -62,11 +62,7 @@ const LabForm = ({ record, setRecord, submit }) => {
 
   // update file input
   const onFileUpload = (file) => {
-    // file = {
-    //   id: uploaded.asset_id,
-    //   name: uploaded.original_filename,
-    //   url: uploaded.url,
-    // }
+   
     setRecord((record) => {
       return { ...record, fileName: file.name, fileURL: file.url };
     });

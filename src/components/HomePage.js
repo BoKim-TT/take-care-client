@@ -7,7 +7,7 @@ const HomePage = () => {
 
   // fetch health news from mediastack api
   useEffect(() => {
-    fetch('/api/news')
+    fetch('https://take-care.herokuapp.com/api/news')
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {

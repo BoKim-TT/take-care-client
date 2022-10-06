@@ -11,7 +11,7 @@ export const MedRecordProvider = ({ children }) => {
 // POST request : add a record
   const addForm = (form) => {
    
-    fetch(`/data/med-records/${user.token}`, {
+    fetch(`https://take-care.herokuapp.com/data/med-records/${user.token}`, {
       method: 'POST',
       body: JSON.stringify(form),
       headers: {
@@ -31,7 +31,7 @@ export const MedRecordProvider = ({ children }) => {
 // PATCH request : update a record
   const editForm = (update) => {
 
-    fetch(`/data/med-records/${user.token}/${update._id}`, {
+    fetch(`https://take-care.herokuapp.com/data/med-records/${user.token}/${update._id}`, {
       method: 'PATCH',
       body: JSON.stringify(update),
       headers: {
@@ -59,7 +59,7 @@ export const MedRecordProvider = ({ children }) => {
 // DELETE request :delete a record
   const deleteForm = (id) => {
    
-    fetch(`/data/med-records/${user.token}/${id}`, {
+    fetch(`https://take-care.herokuapp.com/data/med-records/${user.token}/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

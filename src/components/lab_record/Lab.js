@@ -35,7 +35,7 @@ const Lab = () => {
   //get labRecords request by user change
   useEffect(() => {
     if (user.token) {
-      fetch(`/data/lab-records/${user.token}`)
+      fetch(`https://take-care.herokuapp.com//data/lab-records/${user.token}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.status === 200) {

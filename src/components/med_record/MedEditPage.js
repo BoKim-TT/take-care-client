@@ -29,7 +29,7 @@ const MedEditPage = () => {
 
   // get a single med record by record id and user
   useEffect(() => {
-    fetch(`/data/med-records/${user.token}/${id}`)
+    fetch(`https://take-care.herokuapp.com/data/med-records/${user.token}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {

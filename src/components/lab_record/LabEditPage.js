@@ -23,7 +23,7 @@ const LabEditPage = () => {
 
 // when labEdit page opens with id param, fetch a single lab record from backend
   useEffect(() => {
-    fetch(`/data/lab-records/${user.token}/${id}`)
+    fetch(`https://take-care.herokuapp.com/data/lab-records/${user.token}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {

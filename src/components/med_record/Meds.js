@@ -35,7 +35,7 @@ const Meds = () => {
   //get medRecords request by user change
   useEffect(() => {
     if (user.token) {
-      fetch(`/data/med-records/${user.token}`)
+      fetch(`https://take-care.herokuapp.com/data/med-records/${user.token}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.status === 200) {

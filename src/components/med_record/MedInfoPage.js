@@ -19,7 +19,7 @@ const MedInfoPage = () => {
 
 // fetch a med record by record id & user
   useEffect(() => {
-    fetch(`/data/med-records/${user.token}/${id}`)
+    fetch(`https://take-care.herokuapp.com/data/med-records/${user.token}/${id}`)
       .then((res) => res.json())
       .then((data) => {
      
@@ -33,7 +33,7 @@ const MedInfoPage = () => {
 //fetch MEDLINE api data by med record (generic or brand name )
   useEffect(() => {
     if (record._id) {
-      fetch(`/api/med-info`, {
+      fetch(`https://take-care.herokuapp.com/api/med-info`, {
         method: 'POST',
         body: JSON.stringify({
           name: record.genericName || record.brandName,

@@ -80,7 +80,7 @@ const SignInPage = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    fetch(`/data/user/signIn`, {
+    fetch(`https://take-care.herokuapp.com/data/user/signIn`, {
       method: 'POST',
       body: JSON.stringify({
         email,
