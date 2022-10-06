@@ -20,8 +20,8 @@ const Lab = () => {
   //redirect to edit page
   const navigate = useNavigate();
 
-  //initial state for lab record post form 
-    const [record, setRecord] = useState({
+  //initial state for lab record post form
+  const [record, setRecord] = useState({
     date: '',
     laboratoryName: '',
     prescriber: '',
@@ -59,20 +59,22 @@ const Lab = () => {
   return (
     <Wrapper>
       {!user.token && <Message>Please sign in to post a record</Message>}
-      {user.token && labRecords.length === 0 && <Message>{message}</Message>}
-      {user.token && labRecords.length > 0 && (
+
+      {user.token && (
         <>
-          <LabForm submit="Post" record={record} setRecord={setRecord}/>
+          <LabForm submit="Post" record={record} setRecord={setRecord} />
           <History>
-            {labRecords.map((record) => (
-              <LabList
-                key={record._id}
-                record={record}
-                handleDelete={() => deleteForm(record._id)}
-                handleEdit={() => handleEdit(record._id)}
-                buttonIncluded="true"
-              />
-            ))}
+            {labRecords.length === 0 && <Message>{message}</Message>}
+            {labRecords.length > 0 &&
+              labRecords.map((record) => (
+                <LabList
+                  key={record._id}
+                  record={record}
+                  handleDelete={() => deleteForm(record._id)}
+                  handleEdit={() => handleEdit(record._id)}
+                  buttonIncluded="true"
+                />
+              ))}
           </History>
         </>
       )}
