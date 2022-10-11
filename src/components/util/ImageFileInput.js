@@ -1,16 +1,19 @@
 import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const CLOUDINARY_URL = process.env.CLOUDINARY_URL;
-//cloudinary api
+
+//cloudinary api 
 const imageUploader = async (file) => {
   const data = new FormData();
   data.append('file', file);
   data.append('upload_preset', 'pdzaoz52');
-  const result = await fetch(CLOUDINARY_URL, {
-    method: 'POST',
-    body: data,
-  });
+  const result = await fetch(
+    'https://api.cloudinary.com/v1_1/drqni4rhj/upload',
+    {
+      method: 'POST',
+      body: data,
+    }
+  );
   return await result.json();
 };
 
@@ -18,10 +21,11 @@ const ImageFileInput = ({ fileUpload, name }) => {
   const inputRef = useRef();
   const [loading, setLoading] = useState(false);
 
-  // file button clicked
+ // file button clicked 
   const handleFileChange = async (ev) => {
+   
     setLoading(true);
-    // fetch image file to cloudinary api
+    // fetch image file to cloudinary api 
     const uploaded = await imageUploader(ev.target.files[0]);
     setLoading(false);
 
@@ -33,7 +37,7 @@ const ImageFileInput = ({ fileUpload, name }) => {
     });
   };
 
-  // clickling button makes input field targeted
+// clickling button makes input field targeted
   const onButtonClick = (ev) => {
     ev.preventDefault();
     inputRef.current.click();
