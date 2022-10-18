@@ -2,12 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-const MedList = ({
-  record,
-  handleDelete,
-  handleEdit,
-  buttonIncluded,
-}) => {
+const MedList = ({ record, handleDelete, handleEdit, buttonIncluded }) => {
   return (
     <List>
       <Heading>{record.date}</Heading>
@@ -62,7 +57,7 @@ const List = styled.li`
   font-size: 13px;
   padding: 2%;
   border-radius: 5px;
-  background-color: var(--color-beige);
+  background-color: var(--color-dark-beige);
 `;
 const Container = styled.div`
   display: flex;
@@ -110,7 +105,7 @@ const BtnBox = styled.div`
   justify-content: space-between;
   padding: 1% 0;
 `;
-const Update= styled.button`
+const Update = styled.button`
   width: 30%;
   height: 30px;
   font-size: 12px;

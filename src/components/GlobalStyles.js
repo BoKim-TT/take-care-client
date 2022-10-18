@@ -4,6 +4,7 @@ export default createGlobalStyle`
   :root {
     --color-cyan: #5FB4A2;
     --color-beige: #dfd8ca;
+    --color-dark-beige:  #BB9981;
     --color-dark-blue: #203A4c;
     --color-dark-gray: #33323D;
     --color-light-gray: #EAEAEB;
@@ -40,7 +41,7 @@ export default createGlobalStyle`
 
   body {
     width: 100vw;
-    background-color: var(--color-light-gray);
+    background: top url('images/background-img4.jpg');
  
 }
   ol, ul, li {

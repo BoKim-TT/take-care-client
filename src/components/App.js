@@ -20,15 +20,15 @@ const App = () => {
       <GlobalStyles />
       <Header />
       <Routes>
-          <Route exact path="/" element={<HomePage />} />
-          <Route exact path="/signIn" element={<SignInPage />} />
-          <Route exact path="/signUp" element={<SignUpPage />} />
-          <Route exact path="/my_meds" element={<MedPage />} />
-          <Route exact path="/my_meds/info/:id" element={<MedInfoPage />} />
-          <Route exact path="/my_meds/edit/:id" element={<MedEditPage />} />
-          <Route exact path="/my_labs" element={<LabPage />} />
-          <Route exact path="/my_labs/reference/:id" element={<LabReferencePage />} />
-          <Route exact path="/my_labs/edit/:id" element={<LabEditPage />} />    
+          <Route  path="/" element={<HomePage />} />
+          <Route  path="/signIn" element={<SignInPage />} />
+          <Route  path="/signUp" element={<SignUpPage />} />
+          <Route  path="/my_meds" element={<MedPage />} />
+          <Route  path="/my_meds/info/:id" element={<MedInfoPage />} />
+          <Route  path="/my_meds/edit/:id" element={<MedEditPage />} />
+          <Route  path="/my_labs" element={<LabPage />} />
+          <Route  path="/my_labs/reference/:id" element={<LabReferencePage />} />
+          <Route  path="/my_labs/edit/:id" element={<LabEditPage />} />    
       </Routes>
     </BrowserRouter>
   );
