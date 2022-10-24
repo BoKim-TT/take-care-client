@@ -1,8 +1,8 @@
 # Introduction
 
-Personal healthcare record web app that registered user can keep their health records such as lab data and medication use. 
-User can log in via gmail accounts or sign up with other email account (using Oauth and bcrypt)
-Loged in user can create, edit and delete their records
+Personal healthcare record web app that registered user can keep their health records such as lab data and medication use.\
+User can log in via gmail accounts or sign up with other email account (using Oauth and bcrypt).\
+Loged in user can create, edit and delete their records.\
 User can also check information or reference regarding their medication and lab results via MEDLINEPLUS API.
 
 # Features
