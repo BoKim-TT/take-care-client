@@ -1,3 +1,7 @@
+<img width="1320" alt="homePage" src="https://user-images.githubusercontent.com/25041649/204112163-7a33a46b-ca39-4f50-8627-3f8ec5768b3a.png">
+<img width="927" alt="mymedPage" src="https://user-images.githubusercontent.com/25041649/204112173-419713ad-6aad-42fe-9e3b-44490ed537ff.png">
+<img width="888" alt="mylabPage" src="https://user-images.githubusercontent.com/25041649/204112177-78df1966-b2b5-4303-8867-8b645ff75576.png">
+
 # Introduction
 
 Personal healthcare record web app that registered user can keep their health records such as lab data and medication use.\
