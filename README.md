@@ -1,5 +1,5 @@
 <img width="1320" alt="homePage" src="https://user-images.githubusercontent.com/25041649/204112163-7a33a46b-ca39-4f50-8627-3f8ec5768b3a.png">
-
+![mainPages](https://user-images.githubusercontent.com/25041649/204112357-ca5521fb-8516-4b01-b5ae-b7864aab01da.png)
 
 # Introduction
 
