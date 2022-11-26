@@ -1,5 +1,7 @@
 <img width="1320" alt="homePage" src="https://user-images.githubusercontent.com/25041649/204112163-7a33a46b-ca39-4f50-8627-3f8ec5768b3a.png">
-![mainPages](https://user-images.githubusercontent.com/25041649/204112357-ca5521fb-8516-4b01-b5ae-b7864aab01da.png)
+<img width="523" alt="signinPage" src="https://user-images.githubusercontent.com/25041649/204112463-39dccfe9-d4df-4b46-b7ad-b4999845b440.png">
+<img width="355" alt="mylabPage" src="https://user-images.githubusercontent.com/25041649/204112470-8a09a9af-0ef9-4193-a77f-7a12e791496d.png">
+<img width="371" alt="mymedPage" src="https://user-images.githubusercontent.com/25041649/204112474-9bfeae08-dbb2-43bd-a231-cac3263c5927.png">
 
 # Introduction
 
