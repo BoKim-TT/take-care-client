@@ -1,7 +1,8 @@
 <img width="1320" alt="homePage" src="https://user-images.githubusercontent.com/25041649/204112163-7a33a46b-ca39-4f50-8627-3f8ec5768b3a.png">
-<img width="523" alt="signinPage" src="https://user-images.githubusercontent.com/25041649/204112463-39dccfe9-d4df-4b46-b7ad-b4999845b440.png">
-<img width="355" alt="mylabPage" src="https://user-images.githubusercontent.com/25041649/204112470-8a09a9af-0ef9-4193-a77f-7a12e791496d.png">
-<img width="371" alt="mymedPage" src="https://user-images.githubusercontent.com/25041649/204112474-9bfeae08-dbb2-43bd-a231-cac3263c5927.png">
+<img width="1314" alt="Screen Shot 2022-11-26 at 6 26 52 PM" src="https://user-images.githubusercontent.com/25041649/204112613-a7d6bad7-9b82-4c20-8620-3835339f96da.png">
+<img width="922" alt="Screen Shot 2022-11-26 at 6 27 40 PM" src="https://user-images.githubusercontent.com/25041649/204112624-a6c36d0d-c01b-4cf4-8cb0-be450c86c180.png">
+<img width="921" alt="Screen Shot 2022-11-26 at 6 29 00 PM" src="https://user-images.githubusercontent.com/25041649/204112631-ee9d669f-58aa-4b88-9807-9da48062f8c4.png">
+
 
 # Introduction
 
