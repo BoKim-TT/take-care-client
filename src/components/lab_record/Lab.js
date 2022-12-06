@@ -8,14 +8,13 @@ import { UserContext } from '../user/userContext';
 
 const Lab = () => {
   //labRecords states and functions from labRecords context
-  const { labRecords, setLabRecords, deleteForm, addForm } =
+  const { labRecords, setLabRecords, deleteForm, addForm, message } =
     useContext(LabRecordContext);
 
   //current user
   const { user } = useContext(UserContext);
 
-  //message state for alert message
-  const [message, setMessage] = useState(null);
+
 
   //redirect to edit page
   const navigate = useNavigate();
@@ -32,24 +31,7 @@ const Lab = () => {
     fileURL: '',
   });
 
-  //get labRecords request by user change
-  useEffect(() => {
-    if (user.token) {
-      fetch(`https://take-care.herokuapp.com/data/lab-records/${user.token}`)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.status === 200) {
-            const sorted = data.data.sort(
-              (a, b) => new Date(b.date) - new Date(a.date)
-            );
-            setLabRecords(sorted);
-          } else {
-            setMessage(data.message);
-          }
-        })
-        .catch((error) => console.log(error));
-    }
-  }, [user]);
+  
 
   //simply redirect to lab edit page by clicking the update button
   const handleEdit = (id) => {

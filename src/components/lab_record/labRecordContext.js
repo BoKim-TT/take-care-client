@@ -6,9 +6,31 @@ export const LabRecordContext = createContext(null);
 export const LabRecordProvider = ({ children }) => {
   //all the labRecords under user
   const [labRecords, setLabRecords] = useState([]);
-
+  //message state for alert message
+  const [message, setMessage] = useState(null);
   //current user
   const {user} =useContext(UserContext)
+
+
+//get labRecords request by user change
+  useEffect(() => {
+    if (user.token) {
+      fetch(`https://take-care.herokuapp.com/data/lab-records/${user.token}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status === 200) {
+            const sorted = data.data.sort(
+              (a, b) => new Date(b.date) - new Date(a.date)
+            );
+            setLabRecords(sorted);
+          } else {
+             setLabRecords([])
+            setMessage(data.message);
+          }
+        })
+        .catch((error) => console.log(error));
+    }
+  }, [user]);
 
  //post a new lab record
   const addForm = (form) => {
@@ -84,7 +106,7 @@ export const LabRecordProvider = ({ children }) => {
 
   return (
     <LabRecordContext.Provider
-      value={{ labRecords, setLabRecords, addForm, deleteForm, editForm }}
+      value={{ labRecords, setLabRecords, addForm, deleteForm, editForm , message}}
     >
       {children}
     </LabRecordContext.Provider>

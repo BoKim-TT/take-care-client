@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import backgroundImage from '../assets/background-img4.jpg'
+import backgroundImage from '../assets/background-img4.jpg';
 export default createGlobalStyle`
   :root {
     --color-cyan: #5FB4A2;

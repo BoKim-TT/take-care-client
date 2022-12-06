@@ -5,8 +5,31 @@ export const MedRecordContext = createContext(null);
 export const MedRecordProvider = ({ children }) => {
   // all med records under current user
   const [medRecords, setMedRecords] = useState([]);
+  //message state for alert message
+  const [message, setMessage] = useState(null)
   //current user
   const { user } = useContext(UserContext);
+
+//get medRecords request by user change
+  useEffect(() => {
+    if (user.token) {
+      fetch(`https://take-care.herokuapp.com/data/med-records/${user.token}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status === 200) {
+            const sorted = data.data.sort(
+              (a, b) => new Date(b.date) - new Date(a.date)
+            );
+            setMedRecords(sorted);
+          } else {
+            setMessage(data.message);
+            setMedRecords([])
+          }
+        })
+        .catch((error) => console.log(error));
+    }
+  }, [user]);
+
 
 // POST request : add a record
   const addForm = (form) => {
@@ -80,7 +103,7 @@ export const MedRecordProvider = ({ children }) => {
 
   return (
     <MedRecordContext.Provider
-      value={{ medRecords, setMedRecords, addForm, deleteForm, editForm }}
+      value={{ medRecords, setMedRecords, addForm, deleteForm, editForm, message }}
     >
       {children}
     </MedRecordContext.Provider>
