@@ -20,11 +20,7 @@ const HomePage = () => {
 
   return (
     <Wrapper>
-      <Notice>
-        {' '}
-        <h1>Take care is currently down for maintenance </h1>
-      </Notice>
-
+    
       {news.length > 0 && (
         <News>
           {news.map((el) => (
@@ -52,9 +48,7 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-const Notice = styled.div`
 
-`
 const News = styled.div`
   width: 84%;
   max-width: 1000px;
