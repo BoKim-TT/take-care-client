@@ -5,6 +5,7 @@ import LabList from './LabList';
 import { MdOutlineArrowBackIos } from 'react-icons/md';
 import { UserContext } from '../user/userContext';
 import LabForm from './LabForm';
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT
 
 const LabEditPage = () => {
   const { user } = useContext(UserContext);
@@ -23,7 +24,7 @@ const LabEditPage = () => {
 
 // when labEdit page opens with id param, fetch a single lab record from backend
   useEffect(() => {
-    fetch(`https://take-care.herokuapp.com/data/lab-records/${user.token}/${id}`)
+    fetch(`${API_ENDPOINT}/data/lab-records/${user.token}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {

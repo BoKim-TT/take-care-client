@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 const HomePage = () => {
   const [news, setNews] = useState([]);
 
   // fetch health news from mediastack api
   useEffect(() => {
-    fetch('https://take-care.herokuapp.com/api/news')
+    fetch(`${API_ENDPOINT}/api/news`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {
@@ -52,19 +53,19 @@ const Wrapper = styled.div`
 const News = styled.div`
   width: 84%;
   max-width: 1000px;
-  padding: 10px;
+  padding: 2px;
   padding-bottom: none;
   margin: 50px auto;
   display: flex;
   flex-direction: column;
-  border-radius: 7px;
-  background-color: #c68b59;
+  /* border-radius: 7px; */
+  background-color: #434242;
 `;
 const List = styled.li`
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 2px;
   display: flex;
-  border-radius: 7px;
+  /* border-radius: 7px; */
   background-color: var(--color-white);
 `;
 const ImgContainer = styled.div`

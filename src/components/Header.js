@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaHandHoldingMedical } from 'react-icons/fa';
 import { UserContext } from '../components/user/userContext';
@@ -9,7 +9,7 @@ const Header = () => {
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate(null);
 
-// sign out button click
+  // sign out button click
   const handleSignOut = () => {
     //set user token null
     setUser({ token: null });
@@ -30,7 +30,7 @@ const Header = () => {
       </Nav>
       <Sign>
         {!user.token && <SignIn to="/signIn">Sign In</SignIn>}
-        {user.token && <SignOut onClick={handleSignOut}>Sign out</SignOut>}
+        {user.token && <SignOut onClick={handleSignOut}>Sign Out</SignOut>}
       </Sign>
     </Wrapper>
   );
@@ -65,13 +65,18 @@ const Nav = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-const MyLink = styled(Link)`
+const MyLink = styled(NavLink)`
   text-decoration: none;
-  color: var(--color-dark-gray);
+  font-size: 18px;
+  font-weight: 600;
+  color: #0e5e6f;
   transition: all 300ms ease;
   :hover {
     color: var(--color-bright-red);
-    transform: scale(1.05);
+    transform: scale(1.1);
+  }
+  &.active {
+    color: red;
   }
 `;
 const Sign = styled.div`
@@ -84,7 +89,7 @@ const SignOut = styled.button`
   height: 30px;
   margin: 5px;
   background-color: var(--color-cyan);
-  border-radius: 3px;
+  /* border-radius: 3px; */
   font-size: 14px;
   cursor: pointer;
   transition: all 300ms ease;
@@ -99,7 +104,7 @@ const SignIn = styled(Link)`
   padding: 8px;
   background-color: var(--color-cyan);
   color: var(--color-dark-gray);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;

@@ -11,8 +11,8 @@ export default createGlobalStyle`
     --color-purple-gray: #9a99ab;
     --color-white: #FAFAFA;
     --color-bright-red:#F43030;
-    --font-heading: 'Ibarra Real Nova', sans-serif, Arial, Helvetica,;
-    --font-body:  'Public Sans', sans-serif,Arial, Helvetica;
+    --font-heading:sans-serif, Arial, Helvetica, 'Ibarra Real Nova';
+    --font-body:  Arial, Helvetica,'Public Sans', sans-serif;
  
   }
 

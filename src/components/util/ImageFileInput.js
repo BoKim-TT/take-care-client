@@ -1,14 +1,14 @@
 import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const cloudinaryName = process.env.CLOUDINARY_CLOUD_NAME;
+const cloudinaryName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
 //cloudinary api
 const imageUploader = async (file) => {
   const data = new FormData();
   data.append('file', file);
   data.append('upload_preset', 'u0wbbyvl');
   const result = await fetch(
-    `https://api.cloudinary.com/v1_1/ddnikq9pc/image/upload`,
+    `https://api.cloudinary.com/v1_1/${cloudinaryName}/image/upload`,
     {
       method: 'POST',
       body: data,

@@ -1,5 +1,6 @@
 import { useState, createContext,useContext, useEffect } from 'react';
 import { UserContext } from '../user/userContext';
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 export const LabRecordContext = createContext(null);
 
@@ -15,7 +16,7 @@ export const LabRecordProvider = ({ children }) => {
 //get labRecords request by user change
   useEffect(() => {
     if (user.token) {
-      fetch(`https://take-care.herokuapp.com/data/lab-records/${user.token}`)
+      fetch(`${API_ENDPOINT}/data/lab-records/${user.token}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.status === 200) {
@@ -35,7 +36,7 @@ export const LabRecordProvider = ({ children }) => {
  //post a new lab record
   const addForm = (form) => {
    
-    fetch(`https://take-care.herokuapp.com/data/lab-records/${user.token}`, {
+    fetch(`${API_ENDPOINT}/data/lab-records/${user.token}`, {
       method: 'POST',
       body: JSON.stringify(form),
       headers: {
@@ -55,7 +56,7 @@ export const LabRecordProvider = ({ children }) => {
  // update a lab record
   const editForm = (update) => { 
 
-    fetch(`https://take-care.herokuapp.com/data/lab-records/${user.token}/${update._id}`, {
+    fetch(`${API_ENDPOINT}/data/lab-records/${user.token}/${update._id}`, {
       method: 'PATCH',
       body: JSON.stringify(update),
       headers: {
@@ -85,7 +86,7 @@ export const LabRecordProvider = ({ children }) => {
 //delete a lab record of user
   const deleteForm = (id) => {
    
-    fetch(`https://take-care.herokuapp.com/data/lab-records/${user.token}/${id}`, {
+    fetch(`${API_ENDPOINT}/data/lab-records/${user.token}/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

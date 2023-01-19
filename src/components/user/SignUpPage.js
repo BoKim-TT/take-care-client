@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import bcrypt from 'bcryptjs';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from './userContext';
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 const SignUpPage = () => {
   const { setUser } = useContext(UserContext);
@@ -28,7 +29,7 @@ const SignUpPage = () => {
     bcrypt.hash(password, 10, function (err, hash) {
 
       // fetch post request into user data
-      fetch(`https://take-care.herokuapp.com/data/user/signUp`, {
+      fetch(`${API_ENDPOINT}/data/user/signUp`, {
         method: 'POST',
         body: JSON.stringify({
           email: email,

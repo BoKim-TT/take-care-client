@@ -7,6 +7,7 @@ import { MdOutlineArrowBackIos } from 'react-icons/md';
 import { MedRecordContext } from './medRecordContext';
 import { UserContext } from '../user/userContext';
 import MedForm from './MedForm';
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 const MedEditPage = () => {
   // edit function from medRecordContext
@@ -29,7 +30,7 @@ const MedEditPage = () => {
 
   // get a single med record by record id and user
   useEffect(() => {
-    fetch(`https://take-care.herokuapp.com/data/med-records/${user.token}/${id}`)
+    fetch(`${API_ENDPOINT}/data/med-records/${user.token}/${id}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status === 200) {

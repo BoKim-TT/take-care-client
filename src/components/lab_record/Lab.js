@@ -14,8 +14,6 @@ const Lab = () => {
   //current user
   const { user } = useContext(UserContext);
 
-
-
   //redirect to edit page
   const navigate = useNavigate();
 
@@ -31,8 +29,6 @@ const Lab = () => {
     fileURL: '',
   });
 
-  
-
   //simply redirect to lab edit page by clicking the update button
   const handleEdit = (id) => {
     navigate(`/my_labs/edit/${id}`);
@@ -46,7 +42,6 @@ const Lab = () => {
         <>
           <LabForm submit="Post" record={record} setRecord={setRecord} />
           <History>
-            {labRecords.length === 0 && <Message>{message}</Message>}
             {labRecords.length > 0 &&
               labRecords.map((record) => (
                 <LabList

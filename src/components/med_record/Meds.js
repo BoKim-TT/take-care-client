@@ -5,6 +5,7 @@ import MedList from './MedList';
 import { useNavigate } from 'react-router-dom';
 import { MedRecordContext } from './medRecordContext';
 import { UserContext } from '../user/userContext';
+import exampleImg from '../../assets/example.png';
 
 const Meds = () => {
   //medRecords states and functions from medRecords context
@@ -17,7 +18,7 @@ const Meds = () => {
   //redirect to edit page
   const navigate = useNavigate();
 
- //initial state for med record post form
+  //initial state for med record post form
   const [record, setRecord] = useState({
     date: '',
     brandName: '',
@@ -29,8 +30,6 @@ const Meds = () => {
     fileName: '',
     fileURL: '',
   });
-
-  
 
   //simply redirect to lab edit page by clicking the update button
   const handleEdit = (id) => {
@@ -44,7 +43,6 @@ const Meds = () => {
         <>
           <MedForm record={record} setRecord={setRecord} submit="Post" />
           <History>
-            {medRecords.length === 0 && <Message>{message}</Message>}
             {medRecords.length > 0 &&
               medRecords.map((record) => (
                 <MedList
@@ -83,4 +81,6 @@ const History = styled.div`
   width: 100%;
   margin: 30px auto;
 `;
+
+
 export default Meds;

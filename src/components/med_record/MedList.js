@@ -30,7 +30,8 @@ const MedList = ({ record, handleDelete, handleEdit, buttonIncluded }) => {
           </Content>
           <Content>
             <Span>Comment: </Span>
-            {record.comment}
+            <br></br>
+            <Comment>{record.comment}</Comment>
           </Content>
           {buttonIncluded === 'true' && (
             <BtnBox>
@@ -54,9 +55,9 @@ const List = styled.li`
   width: 100%;
   margin-bottom: 10px;
   color: black;
-  font-size: 13px;
-  padding: 2%;
-  border-radius: 5px;
+  font-size: 12px;
+  padding: 2.5%;
+  /* border-radius: 5px; */
   background-color: var(--color-dark-beige);
 `;
 const Container = styled.div`
@@ -66,9 +67,9 @@ const Container = styled.div`
 const Heading = styled.div`
   width: 100%;
   font-weight: 600;
-  margin-bottom: 7px;
+  margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 2px dotted var(--color-purple-gray);
+  border-bottom: 0.5px solid white;
 `;
 const TextDiv = styled.div`
   width: 70%;
@@ -82,7 +83,11 @@ const Content = styled.p`
 const Span = styled.span`
   font-size: 13px;
   font-style: italic;
+
 `;
+const Comment = styled.p`
+line-height: 18px;
+`
 const ImageDiv = styled.div`
   height: 230px;
 `;

@@ -2,8 +2,9 @@ import React, { useContext, useEffect, useState, useRef } from 'react';
 import styled from 'styled-components';
 import { UserContext } from './userContext';
 import jwt_decode from 'jwt-decode';
-// import env from 'react-dotenv';
 import { useNavigate } from 'react-router-dom';
+const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
+const client_id = process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID;
 
 const SignInPage = () => {
   const { setUser } = useContext(UserContext);
@@ -22,8 +23,6 @@ const SignInPage = () => {
   const passwordRef = useRef();
   const formRef = useRef();
 
-  // GOOGLE auth client_id
-  const client_id = process.env.REACT_APP_GOOGLE_AUTH_CLIENT_ID;
 
   // GOOGLE auth call back function
   const handleCallbackResponse = (response) => {
@@ -80,7 +79,7 @@ const SignInPage = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
-    fetch(`https://take-care.herokuapp.com/data/user/signIn`, {
+    fetch(`${API_ENDPOINT}/data/user/signIn`, {
       method: 'POST',
       body: JSON.stringify({
         email,
