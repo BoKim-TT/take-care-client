@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const cloudinaryName = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
+const cloudinaryName = process.env.CLOUDINARY_CLOUD_NAME;
 //cloudinary api
 const imageUploader = async (file) => {
   const data = new FormData();
