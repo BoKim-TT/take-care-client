@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const cloudinaryName =
-  process.env === 'production'
+  process.env !== 'development'
     ? process.env.CLOUDINARY_CLOUD_NAME
     : process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
 
