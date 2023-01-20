@@ -5,7 +5,7 @@ const cloudinaryName =
   process.env.NODE_ENV !== 'development'
     ? process.env.CLOUDINARY_CLOUD_NAME
     : process.env.REACT_APP_CLOUDINARY_CLOUD_NAME;
-
+console.log(process.env.NODE_ENV)
 //cloudinary api
 const imageUploader = async (file) => {
   const data = new FormData();
