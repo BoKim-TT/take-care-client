@@ -2,8 +2,7 @@ import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_NAME;
-console.log(process.env)
-console.log(CLOUD_NAME);
+
 
 //cloudinary api
 const imageUploader = async (file) => {
