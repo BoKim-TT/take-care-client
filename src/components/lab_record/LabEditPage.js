@@ -32,7 +32,7 @@ const LabEditPage = () => {
         }
       })
       .catch((error) => console.log(error));
-  }, [id]);
+  }, [id, user]);
 
   return (
     <Wrapper>

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import styled, { css } from 'styled-components';
 import ImageFileInput from '../util/ImageFileInput';

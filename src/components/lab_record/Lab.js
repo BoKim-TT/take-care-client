@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { LabRecordContext } from './labRecordContext';
 import LabList from './LabList';
@@ -8,7 +8,7 @@ import { UserContext } from '../user/userContext';
 
 const Lab = () => {
   //labRecords states and functions from labRecords context
-  const { labRecords, setLabRecords, deleteForm, addForm, message } =
+  const { labRecords, deleteForm } =
     useContext(LabRecordContext);
 
   //current user

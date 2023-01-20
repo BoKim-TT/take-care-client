@@ -1,16 +1,15 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import MedForm from './MedForm';
 import MedList from './MedList';
 import { useNavigate } from 'react-router-dom';
 import { MedRecordContext } from './medRecordContext';
 import { UserContext } from '../user/userContext';
-import exampleImg from '../../assets/example.png';
+// import exampleImg from '../../assets/example.png';
 
 const Meds = () => {
   //medRecords states and functions from medRecords context
-  const { medRecords, setMedRecords, addForm, deleteForm, message } =
-    useContext(MedRecordContext);
+  const { medRecords, deleteForm } = useContext(MedRecordContext);
 
   //current user
   const { user } = useContext(UserContext);
@@ -81,6 +80,5 @@ const History = styled.div`
   width: 100%;
   margin: 30px auto;
 `;
-
 
 export default Meds;

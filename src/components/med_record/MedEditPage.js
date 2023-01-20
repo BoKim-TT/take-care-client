@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import styled, { css } from 'styled-components';
+import styled  from 'styled-components';
 import ImageFileInput from '../util/ImageFileInput';
 import { useParams, useNavigate } from 'react-router-dom';
 import MedList from './MedList';
@@ -10,17 +10,13 @@ import MedForm from './MedForm';
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 const MedEditPage = () => {
-  // edit function from medRecordContext
-  const { editForm } = useContext(MedRecordContext);
+  
 
   //current user
   const { user } = useContext(UserContext);
 
   //single med record id
   const id = useParams().id;
-
-  //error state for message alert
-  const [error, setError] = useState(null);
 
   // single med record state from fetch result
   const [record, setRecord] = useState({});
