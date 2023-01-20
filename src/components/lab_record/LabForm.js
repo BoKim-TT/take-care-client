@@ -15,12 +15,12 @@ const LabForm = ({ record, setRecord, submit }) => {
   const validationCheck = (form) => {
     if (!form.date || !form.testArea || !form.testResult) {
       setError(
-        'please fill in the required area : date, test area, test result '
+        'Please fill in the required area : date, test area, test result '
       );
       setTimeout(() => {
         setError(null);
         return;
-      }, 3000);
+      }, 3500);
     }
   };
 
@@ -61,14 +61,13 @@ const LabForm = ({ record, setRecord, submit }) => {
 
   // update file input
   const onFileUpload = (file) => {
-   
     setRecord((record) => {
       return { ...record, fileName: file.name, fileURL: file.url };
     });
   };
 
   return (
-    <>
+    <Container>
       <Form>
         <InputShort
           type="date"
@@ -128,9 +127,12 @@ const LabForm = ({ record, setRecord, submit }) => {
         <SumbitBtn onClick={onSubmit}>{submit}</SumbitBtn>
       </Form>
       {error && <ErrorMessage>{error}</ErrorMessage>}
-    </>
+    </Container>
   );
 };
+const Container = styled.div`
+  position: relative;
+`;
 const Form = styled.form`
   margin-top: 15px;
   display: flex;
@@ -187,12 +189,15 @@ const SumbitBtn = styled.button`
 `;
 const ErrorMessage = styled.div`
   position: absolute;
-  top: 40%;
+  width: 70%;
+  padding: 1%;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--color-bright-red);
-  opacity: 0.7;
-  padding: 20px;
+  font-weight: 400;
+  background-color: #1c315e;
+  opacity: 0.8;
+  color: white;
   z-index: 3;
   text-align: center;
 `;

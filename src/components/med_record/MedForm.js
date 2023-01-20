@@ -17,12 +17,12 @@ const MedForm = ({ record, setRecord, submit }) => {
   const validationCheck = (form) => {
     if (!form.date || (!form.brandName && !form.genericName)) {
       setError(
-        'please fill in the required area : date, either brand name or generic name'
+        'Please fill in the required area : date, either brand name or generic name'
       );
       setTimeout(() => {
         setError(null);
         return;
-      }, 3000);
+      }, 3500);
     }
   };
 
@@ -203,12 +203,15 @@ const SumbitBtn = styled.button`
 `;
 const ErrorMessage = styled.div`
   position: absolute;
-  top: 40%;
+  width: 70%;
+  padding: 1%;
+  top: 50%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--color-bright-red);
-  opacity: 0.7;
-  padding: 20px;
+  font-weight: 400;
+  background-color: #1c315e;
+  opacity: 0.8;
+  color: white;
   z-index: 3;
   text-align: center;
 `;
