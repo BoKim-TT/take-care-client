@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
 const HomePage = () => {
@@ -13,16 +15,15 @@ const HomePage = () => {
       .then((data) => {
         if (data.status === 200) {
           //filter news with image source
-          const myNews = data.data.filter((el) => el.image !== null);
-          setNews(myNews);
+          const newsData = data.data.filter((el) => el.image !== null);
+          setNews(newsData);
         }
       });
   }, []);
 
   return (
     <Wrapper>
-    
-      {news.length > 0 && (
+      {news.length > 0 ? (
         <News>
           {news.map((el) => (
             <List key={el.title}>
@@ -39,6 +40,18 @@ const HomePage = () => {
             </List>
           ))}
         </News>
+      ) : (
+        <Box
+          sx={{
+            width: '100%',
+            height: '700px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <CircularProgress />
+        </Box>
       )}
     </Wrapper>
   );
@@ -48,7 +61,6 @@ const Wrapper = styled.div`
   width: 100%;
   text-align: center;
 `;
-
 
 const News = styled.div`
   width: 84%;

@@ -7,7 +7,7 @@ import { UserContext } from '../components/user/userContext';
 const Header = () => {
   // current user state
   const { user, setUser } = useContext(UserContext);
-  const navigate = useNavigate(null);
+  const navigate = useNavigate();
 
   // sign out button click
   const handleSignOut = () => {
@@ -30,7 +30,7 @@ const Header = () => {
       </Nav>
       <Sign>
         {!user.token && <SignIn to="/signIn">Sign In</SignIn>}
-        {user.token && <SignOut onClick={handleSignOut}>Sign Out</SignOut>}
+        {user.token && <SignOut onClick={handleSignOut}>Sign out</SignOut>}
       </Sign>
     </Wrapper>
   );
@@ -51,8 +51,8 @@ const IconBox = styled(Link)`
   border-radius: 10px;
 `;
 const Icon = styled(FaHandHoldingMedical)`
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   transition: all 300ms ease;
   &:hover {
     transform: scale(1.1);
@@ -67,7 +67,7 @@ const Nav = styled.div`
 `;
 const MyLink = styled(NavLink)`
   text-decoration: none;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
   color: #0e5e6f;
   transition: all 300ms ease;
@@ -85,27 +85,26 @@ const Sign = styled.div`
   align-items: center;
 `;
 const SignOut = styled.button`
-  width: 70px;
-  height: 30px;
-  margin: 5px;
+  text-decoration: none;
+  padding: 10px 14px;
   background-color: var(--color-cyan);
-  /* border-radius: 3px; */
-  font-size: 14px;
+  color: var(--color-dark-gray);
+  font-size: 18px;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 300ms ease;
+  transition: all 300ms ease-in-out;
   :hover {
     border: 1px solid var(--color-cyan);
     background-color: var(--color-white);
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 `;
 const SignIn = styled(Link)`
   text-decoration: none;
-  padding: 8px;
+  padding: 10px 14px;
   background-color: var(--color-cyan);
   color: var(--color-dark-gray);
-  /* border-radius: 5px; */
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   cursor: pointer;
   transition: all 300ms ease-in-out;

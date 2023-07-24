@@ -55,9 +55,8 @@ const List = styled.li`
   width: 100%;
   margin-bottom: 10px;
   color: black;
-  font-size: 12px;
+  font-size: 1rem;
   padding: 2.5%;
-  /* border-radius: 5px; */
   background-color: var(--color-dark-beige);
 `;
 const Container = styled.div`
@@ -67,9 +66,10 @@ const Container = styled.div`
 const Heading = styled.div`
   width: 100%;
   font-weight: 600;
+  font-size: 1rem;
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 0.5px solid white;
+  border-bottom: 2px dotted var(--color-beige);
 `;
 const TextDiv = styled.div`
   width: 70%;
@@ -79,15 +79,15 @@ const TextDiv = styled.div`
 `;
 const Content = styled.p`
   margin-bottom: 6px;
+  font-size: 1rem;
 `;
 const Span = styled.span`
-  font-size: 13px;
+  font-size: 1rem;
   font-style: italic;
-
 `;
 const Comment = styled.p`
-line-height: 18px;
-`
+  line-height: 18px;
+`;
 const ImageDiv = styled.div`
   height: 230px;
 `;
@@ -113,7 +113,7 @@ const BtnBox = styled.div`
 const Update = styled.button`
   width: 30%;
   height: 30px;
-  font-size: 12px;
+  font-size: 0.9rem;
   background-color: var(--color-white);
   border-radius: 5px;
   cursor: pointer;
@@ -132,13 +132,13 @@ const Delete = styled(Update)`
 const Info = styled(Link)`
   width: 30%;
   height: 30px;
-  font-size: 12px;
+  font-size: 0.9rem;
   color: var(--color-white);
   background-color: var(--color-dark-blue);
   border-radius: 5px;
   text-decoration: none;
   text-align: center;
-  padding-top: 6px;
+  padding-top: 7px;
   transition: all 300ms ease-in-out;
   :hover {
     transform: scale(1.1);

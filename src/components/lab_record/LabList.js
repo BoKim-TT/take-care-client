@@ -52,9 +52,8 @@ const List = styled.li`
   width: 100%;
   margin-bottom: 10px;
   color: black;
-  font-size: 13px;
-  padding: 2%;
-  border-radius: 5px;
+  font-size: 1rem;
+  padding: 2.5%;
   background-color: var(--color-purple-gray);
 `;
 const Container = styled.div`
@@ -64,8 +63,9 @@ const Container = styled.div`
 const Heading = styled.div`
   width: 100%;
   font-weight: 600;
+  font-size: 1rem;
   margin-bottom: 10px;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   border-bottom: 2px dotted var(--color-beige);
 `;
 const TextDiv = styled.div`
@@ -76,9 +76,10 @@ const TextDiv = styled.div`
 `;
 const Content = styled.p`
   margin-bottom: 6px;
+  font-size: 1rem;
 `;
 const Span = styled.span`
-  font-size: 13px;
+  font-size: 1rem;
   font-style: italic;
 `;
 
@@ -107,7 +108,7 @@ const BtnBox = styled.div`
 const Update = styled.button`
   width: 30%;
   height: 30px;
-  font-size: 12px;
+  font-size: 0.9rem;
   background-color: var(--color-white);
   border-radius: 5px;
   cursor: pointer;
@@ -126,13 +127,13 @@ const Delete = styled(Update)`
 const Reference = styled(Link)`
   width: 32%;
   height: 30px;
-  font-size: 12px;
+  font-size: 0.9rem;
   color: var(--color-white);
   background-color: var(--color-dark-blue);
   border-radius: 5px;
   text-decoration: none;
   text-align: center;
-  padding-top: 6px;
+  padding-top: 7px;
   transition: all 300ms ease-in-out;
   :hover {
     transform: scale(1.1);

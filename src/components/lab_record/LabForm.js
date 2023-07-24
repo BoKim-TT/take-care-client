@@ -138,7 +138,7 @@ const Form = styled.form`
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  font-size: 0.8rem;
+  font-size: 1rem;
 `;
 const focusBorder = css`
   :focus {
@@ -147,8 +147,8 @@ const focusBorder = css`
   }
 `;
 const inputFont = css`
-  padding: 0.5em;
-  font-size: 0.8rem;
+  padding: 0.7em;
+  font-size: 1rem;
 `;
 const InputShort = styled.input`
   flex: 1 1 30%;
@@ -165,7 +165,7 @@ const Option = styled.option``;
 const FileDiv = styled.div`
   height: 40px;
   flex: 1 1 50%;
-  font-size: 0.8rem;
+  font-size: 1rem;
   border-right: 1px solid var(--color-dark-blue);
 `;
 const TextArea = styled.textarea`
@@ -178,7 +178,7 @@ const SumbitBtn = styled.button`
   background-color: var(--color-cyan);
   flex: 1 1 50%;
   height: 40px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 300ms ease-in;

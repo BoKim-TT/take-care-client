@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 
 const CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_NAME;
 
-
 //cloudinary api
 const imageUploader = async (file) => {
   const data = new FormData();
@@ -80,7 +79,7 @@ const Button = styled.button`
   background-color: var(--color-cyan);
   width: 100%;
   height: 100%;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 300ms ease-in;
