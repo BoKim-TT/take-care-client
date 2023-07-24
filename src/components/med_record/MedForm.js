@@ -29,7 +29,7 @@ const MedForm = ({ record, setRecord, submit }) => {
   //submit by clicking edit button
   const onSubmit = (ev) => {
     ev.preventDefault();
-    validationCheck(record);
+    // validationCheck(record);
 
     if (ev.target.innerHTML === 'Post') {
       //post request

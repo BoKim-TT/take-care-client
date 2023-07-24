@@ -27,7 +27,7 @@ const LabForm = ({ record, setRecord, submit }) => {
   //update submit click
   const onSubmit = (ev) => {
     ev.preventDefault();
-    validationCheck(record);
+    // validationCheck(record);
 
     if (ev.target.innerHTML === 'Post') {
       //post request to labRecordContext

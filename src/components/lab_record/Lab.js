@@ -8,8 +8,7 @@ import { UserContext } from '../user/userContext';
 
 const Lab = () => {
   //labRecords states and functions from labRecords context
-  const { labRecords, deleteForm } =
-    useContext(LabRecordContext);
+  const { labRecords, deleteForm } = useContext(LabRecordContext);
 
   //current user
   const { user } = useContext(UserContext);
@@ -72,7 +71,7 @@ const Message = styled.div`
   border: 1px solid var(--color-dark-blue);
   margin-bottom: 10px;
   color: var(--color-bright-red);
-  font-size: 13px;
+  font-size: 1rem;
   text-align: center;
   padding: 2%;
   border-radius: 5px;

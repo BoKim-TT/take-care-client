@@ -125,7 +125,7 @@ const Delete = styled(Update)`
   }
 `;
 const Reference = styled(Link)`
-  width: 32%;
+  width: 35%;
   height: 30px;
   font-size: 0.9rem;
   color: var(--color-white);
