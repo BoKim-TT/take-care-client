@@ -5,6 +5,11 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 import { Divider } from '@mui/material';
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
@@ -26,7 +31,41 @@ const HomePage = () => {
 
   return (
     <Wrapper>
-      {news.length > 0 ? (
+      <Box
+        sx={{
+          width: '60%',
+          height: '70%',
+          maxWidth: 1000,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <CardMedia
+          component="iframe"
+          control
+          sx={{
+            width: '100%',
+            height: '100%',
+            p: 0,
+            m: 0,
+          }}
+          src="https://github-production-user-asset-6210df.s3.amazonaws.com/25041649/256994595-df91b392-3672-46b8-bff4-f537cc9790db.mp4"
+        />
+        <CardContent
+          sx={{
+            flex: '1 0 auto',
+            bgcolor: '#3F2E3E',
+            textAlign: 'center',
+            color: 'white',
+          }}
+        >
+          <Typography component="div" variant="subtitle1">
+            Take Care App Demo
+          </Typography>
+        </CardContent>
+      </Box>
+
+      {/* {news.length > 0 ? (
         <List sx={{ width: '80%', mt: '3%' }}>
           {news.map((el) => (
             <>
@@ -58,14 +97,16 @@ const HomePage = () => {
         >
           <CircularProgress />
         </Box>
-      )}
+      )} */}
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   width: 100%;
+  height: calc(100vh - 66px);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
