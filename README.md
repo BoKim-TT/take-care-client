@@ -21,7 +21,7 @@ This project aims to improve healthcare outcomes and help users save time and mo
 # Features
 
 #### Home page
-- current medical news fetched from Mediastack API 
+- demo video of Takecare App
 - sign in or sign up with email account (using Oauth and bcrypt)
 
 #### MyMeds page 
@@ -38,6 +38,7 @@ This project aims to improve healthcare outcomes and help users save time and mo
 
  - ReactJS
  - Styled-components
+ - Material UI
  
  #### Server:
 
@@ -45,16 +46,15 @@ This project aims to improve healthcare outcomes and help users save time and mo
 - MongoDB
 
 # APIs
-- Oauth: to authenticate users
-- Mediastack API : to fetch health news on the homepage
+- Google Oauth2 API : to authenticate users
 - MedlinePlus API : to fetch information that is related to user's health record such as medication or lab results
 
 
 # Setup
 
 ```
-$yarn install
-$yarn start
+$npm install
+$npm start
 ```
 
 
