@@ -54,7 +54,7 @@ const HomePage = () => {
         <CardContent
           sx={{
             flex: '1 0 auto',
-            bgcolor: '#3F2E3E',
+            bgcolor: '#33323D',
             textAlign: 'center',
             color: 'white',
           }}
