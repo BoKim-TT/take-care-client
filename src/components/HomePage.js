@@ -17,17 +17,17 @@ const HomePage = () => {
   const [news, setNews] = useState([]);
 
   // fetch health news from mediastack api
-  useEffect(() => {
-    fetch(`${API_ENDPOINT}/api/news`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.status === 200) {
-          //filter news with image source
-          const newsData = data.data.filter((el) => el.image !== null);
-          setNews(newsData);
-        }
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`${API_ENDPOINT}/api/news`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data.status === 200) {
+  //         //filter news with image source
+  //         const newsData = data.data.filter((el) => el.image !== null);
+  //         setNews(newsData);
+  //       }
+  //     });
+  // }, []);
 
   return (
     <Wrapper>
@@ -49,7 +49,7 @@ const HomePage = () => {
             p: 0,
             m: 0,
           }}
-          src="https://github-production-user-asset-6210df.s3.amazonaws.com/25041649/256994595-df91b392-3672-46b8-bff4-f537cc9790db.mp4"
+          src="https://github-production-user-asset-6210df.s3.amazonaws.com/25041649/256996864-8326b36f-88b5-43e0-9e20-9e4677160e59.mp4"
         />
         <CardContent
           sx={{
