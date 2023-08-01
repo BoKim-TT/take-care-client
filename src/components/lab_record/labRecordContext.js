@@ -1,4 +1,4 @@
-import { useState, createContext,useContext, useEffect } from 'react';
+import { useState, createContext, useContext, useEffect } from 'react';
 import { UserContext } from '../user/userContext';
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
@@ -6,14 +6,13 @@ export const LabRecordContext = createContext(null);
 
 export const LabRecordProvider = ({ children }) => {
   //all the labRecords under user
-  const [labRecords, setLabRecords] = useState([]);
+  const [labRecords, setLabRecords] = useState('');
   //message state for alert message
   const [message, setMessage] = useState(null);
   //current user
-  const {user} =useContext(UserContext)
+  const { user } = useContext(UserContext);
 
-
-//get labRecords request by user change
+  //get labRecords request by user change
   useEffect(() => {
     if (user.token) {
       fetch(`${API_ENDPOINT}/data/lab-records/${user.token}`)
@@ -25,7 +24,7 @@ export const LabRecordProvider = ({ children }) => {
             );
             setLabRecords(sorted);
           } else {
-             setLabRecords([])
+            setLabRecords([]);
             setMessage(data.message);
           }
         })
@@ -33,9 +32,8 @@ export const LabRecordProvider = ({ children }) => {
     }
   }, [user]);
 
- //post a new lab record
+  //post a new lab record
   const addForm = (form) => {
-   
     fetch(`${API_ENDPOINT}/data/lab-records/${user.token}`, {
       method: 'POST',
       body: JSON.stringify(form),
@@ -45,7 +43,6 @@ export const LabRecordProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-    
         if (data.status === 200) {
           setLabRecords([data.data, ...labRecords]);
         }
@@ -53,9 +50,8 @@ export const LabRecordProvider = ({ children }) => {
       .catch((error) => console.log(error));
   };
 
- // update a lab record
-  const editForm = (update) => { 
-
+  // update a lab record
+  const editForm = (update) => {
     fetch(`${API_ENDPOINT}/data/lab-records/${user.token}/${update._id}`, {
       method: 'PATCH',
       body: JSON.stringify(update),
@@ -65,8 +61,7 @@ export const LabRecordProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-       
-       //update the FE labrecords state
+        //update the FE labrecords state
         if (data.status === 200) {
           const copy = [...labRecords];
           const updatedRecords = copy.map((record) => {
@@ -82,10 +77,8 @@ export const LabRecordProvider = ({ children }) => {
       .catch((error) => console.log(error));
   };
 
-
-//delete a lab record of user
+  //delete a lab record of user
   const deleteForm = (id) => {
-   
     fetch(`${API_ENDPOINT}/data/lab-records/${user.token}/${id}`, {
       method: 'DELETE',
       headers: {
@@ -94,8 +87,7 @@ export const LabRecordProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-       
-       //update the FE labRecords state
+        //update the FE labRecords state
         if (data.status === 200) {
           const copy = [...labRecords];
           const updated = copy.filter((record) => record._id !== id);
@@ -107,7 +99,14 @@ export const LabRecordProvider = ({ children }) => {
 
   return (
     <LabRecordContext.Provider
-      value={{ labRecords, setLabRecords, addForm, deleteForm, editForm , message}}
+      value={{
+        labRecords,
+        setLabRecords,
+        addForm,
+        deleteForm,
+        editForm,
+        message,
+      }}
     >
       {children}
     </LabRecordContext.Provider>

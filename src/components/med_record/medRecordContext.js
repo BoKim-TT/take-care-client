@@ -1,4 +1,4 @@
-import { useState, createContext,useContext, useEffect } from 'react';
+import { useState, createContext, useContext, useEffect } from 'react';
 import { UserContext } from '../user/userContext';
 const API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT;
 
@@ -6,13 +6,13 @@ export const MedRecordContext = createContext(null);
 
 export const MedRecordProvider = ({ children }) => {
   // all med records under current user
-  const [medRecords, setMedRecords] = useState([]);
+  const [medRecords, setMedRecords] = useState('');
   //message state for alert message
-  const [message, setMessage] = useState(null)
+  const [message, setMessage] = useState(null);
   //current user
   const { user } = useContext(UserContext);
 
-//get medRecords request by user change
+  //get medRecords request by user change
   useEffect(() => {
     if (user.token) {
       fetch(`${API_ENDPOINT}/data/med-records/${user.token}`)
@@ -25,17 +25,15 @@ export const MedRecordProvider = ({ children }) => {
             setMedRecords(sorted);
           } else {
             setMessage(data.message);
-            setMedRecords([])
+            setMedRecords([]);
           }
         })
         .catch((error) => console.log(error));
     }
   }, [user]);
 
-
-// POST request : add a record
+  // POST request : add a record
   const addForm = (form) => {
-   
     fetch(`${API_ENDPOINT}/data/med-records/${user.token}`, {
       method: 'POST',
       body: JSON.stringify(form),
@@ -45,7 +43,6 @@ export const MedRecordProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-     
         if (data.status === 200) {
           setMedRecords([data.data, ...medRecords]);
         }
@@ -53,9 +50,8 @@ export const MedRecordProvider = ({ children }) => {
       .catch((error) => console.log(error));
   };
 
-// PATCH request : update a record
+  // PATCH request : update a record
   const editForm = (update) => {
-
     fetch(`${API_ENDPOINT}/data/med-records/${user.token}/${update._id}`, {
       method: 'PATCH',
       body: JSON.stringify(update),
@@ -80,10 +76,9 @@ export const MedRecordProvider = ({ children }) => {
       })
       .catch((error) => console.log(error));
   };
- 
-// DELETE request :delete a record
+
+  // DELETE request :delete a record
   const deleteForm = (id) => {
-   
     fetch(`${API_ENDPOINT}/data/med-records/${user.token}/${id}`, {
       method: 'DELETE',
       headers: {
@@ -92,7 +87,7 @@ export const MedRecordProvider = ({ children }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-         // if successful, update FE state of medRecords
+        // if successful, update FE state of medRecords
         if (data.status === 200) {
           const copy = [...medRecords];
           const updated = copy.filter((record) => record._id !== id);
@@ -102,10 +97,16 @@ export const MedRecordProvider = ({ children }) => {
       .catch((error) => console.log(error));
   };
 
-
   return (
     <MedRecordContext.Provider
-      value={{ medRecords, setMedRecords, addForm, deleteForm, editForm, message }}
+      value={{
+        medRecords,
+        setMedRecords,
+        addForm,
+        deleteForm,
+        editForm,
+        message,
+      }}
     >
       {children}
     </MedRecordContext.Provider>

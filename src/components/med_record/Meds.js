@@ -1,13 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 import MedForm from './MedForm';
 import MedList from './MedList';
 import { useNavigate } from 'react-router-dom';
 import { MedRecordContext } from './medRecordContext';
 import { UserContext } from '../user/userContext';
-// import exampleImg from '../../assets/example.png';
+import Loading from '../util/Loading';
+
 
 const Meds = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   //medRecords states and functions from medRecords context
   const { medRecords, deleteForm } = useContext(MedRecordContext);
 
@@ -30,6 +33,12 @@ const Meds = () => {
     fileURL: '',
   });
 
+  useEffect(() => {
+    if (medRecords) {
+      setIsLoading(false);
+    }
+  }, [medRecords]);
+
   //simply redirect to lab edit page by clicking the update button
   const handleEdit = (id) => {
     navigate(`/my_meds/edit/${id}`);
@@ -42,7 +51,10 @@ const Meds = () => {
         <>
           <MedForm record={record} setRecord={setRecord} submit="Post" />
           <History>
-            {medRecords.length > 0 &&
+            {isLoading ? (
+              <Loading />
+            ) : (
+              medRecords.length > 0 &&
               medRecords.map((record) => (
                 <MedList
                   key={record._id}
@@ -51,7 +63,8 @@ const Meds = () => {
                   handleEdit={() => handleEdit(record._id)}
                   buttonIncluded="true"
                 />
-              ))}
+              ))
+            )}
           </History>
         </>
       )}

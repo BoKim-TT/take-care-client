@@ -1,12 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { LabRecordContext } from './labRecordContext';
 import LabList from './LabList';
 import LabForm from './LabForm';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../user/userContext';
+import Loading from '../util/Loading';
 
 const Lab = () => {
+  const [isLoading, setIsLoading] = useState(true);
   //labRecords states and functions from labRecords context
   const { labRecords, deleteForm } = useContext(LabRecordContext);
 
@@ -28,6 +30,12 @@ const Lab = () => {
     fileURL: '',
   });
 
+  useEffect(() => {
+    if (labRecords) {
+      setIsLoading(false);
+    }
+  }, [labRecords]);
+
   //simply redirect to lab edit page by clicking the update button
   const handleEdit = (id) => {
     navigate(`/my_labs/edit/${id}`);
@@ -41,7 +49,10 @@ const Lab = () => {
         <>
           <LabForm submit="Post" record={record} setRecord={setRecord} />
           <History>
-            {labRecords.length > 0 &&
+            {isLoading ? (
+              <Loading />
+            ) : (
+              labRecords.length > 0 &&
               labRecords.map((record) => (
                 <LabList
                   key={record._id}
@@ -50,7 +61,8 @@ const Lab = () => {
                   handleEdit={() => handleEdit(record._id)}
                   buttonIncluded="true"
                 />
-              ))}
+              ))
+            )}
           </History>
         </>
       )}

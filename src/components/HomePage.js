@@ -42,7 +42,7 @@ const HomePage = () => {
       >
         <CardMedia
           component="iframe"
-          control
+          autoPlay
           sx={{
             width: '100%',
             height: '100%',
